@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties":
+  {
+    "event_id":
+    {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_version":
+    {
+      "type": "integer",
+      "not":
+      {
+        "type": "null"
+      }
+    },
+    "event_name":
+    {
+      "type": "string",
+      "minLength": 1
+    },
+    "event_created_at":
+    {
+      "type": "string",
+      "minLength": 1
+    },
+    "producer":
+    {
+      "type": "string",
+      "minLength": 1
+    },
+    "data":
+    {
+      "type": "object",
+      "properties":
+      {
+        "public_id":
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        "status":
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        "assigned_account_public_id":
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        "created_at":
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        "updated_at":
+        {
+          "type": "string",
+          "minLength": 1
+        },
+        "reward": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required":
+      [
+        "public_id",
+        "reward",
+        "description",
+        "status",
+        "assigned_account_public_id",
+        "created_at",
+        "updated_at"
+      ]
+    }
+  },
+  "required":
+  [
+    "event_id",
+    "event_version",
+    "event_name",
+    "event_created_at",
+    "producer",
+    "data"
+  ]
+}
